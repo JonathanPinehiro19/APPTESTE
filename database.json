@@ -1,28 +1,46 @@
 {
-    "users": [
-        {
-            "id": "1",
-            "name": "Joca da Silva",
-            "Email": "joca@silva.com"
-        
-        },
-        {  
-            "id": "2",
-            "name": "Maricleuza Sirineuza",
-            "email": "mari@cleuza.com"
-
-        }
-    ],
-    "comments": [
-        {
-            "id": "1",
-            "user": "1",
-            "text": "Não estou entendendo nada disso."
-        },
-        {
-            "id": "2",
-            "user": "2",
-            "text": "Eu tembém num entendi nada!"
-        }
-    ]
+  "users": [
+    {
+      "id": "1",
+      "name": "Joca da Silva",
+      "Email": "joca@silva.com"
+    },
+    {
+      "id": "2",
+      "name": "Maricleuza Sirineuza",
+      "email": "mari@cleuza.com"
+    },
+    {
+      "query": "\n    query IntrospectionQuery {\n      __schema {\n        \n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          \n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      \n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n      \n      \n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ",
+      "id": "t-4C6QP"
+    },
+    {
+      "name": "Jonathan Abraão",
+      "Email": "jonathan@silva.com",
+      "status": "ativo",
+      "birth": "2004-02-25",
+      "id": "TXA1f5H"
+    },
+    {
+      "name": "Cristiano Ronaldo",
+      "email": "cr7@gmail.com",
+      "status": "ativo",
+      "birth": "1985-02-05",
+      "id": "mpbU-KX"
+    }
+  ],
+  "massages": [
+    {
+      "id": "1",
+      "from": "1",
+      "to": "2",
+      "text": "Não estou entendendo nada disso."
+    },
+    {
+      "id": "1",
+      "from": "1",
+      "to": "2",
+      "text": "Eu também não entendi nada!"
+    }
+  ]
 }
